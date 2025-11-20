@@ -1,0 +1,41 @@
+---
+// src/pages/index.astro
+const title = "Home";
+const description = "Welcome to my Astro site";
+const year = new Date().getFullYear();
+---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <h1>{title}</h1>
+                <nav>
+                    <a href="/">Home</a>
+                    <a href="/about/">About</a>
+                    <a href="/projects/">Projects</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="container">
+            <section>
+                <h2>Welcome</h2>
+                <p>This is a minimal Astro page skeleton. Replace content as needed.</p>
+            </section>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>&copy; {year} Your Name</p>
+            </div>
+        </footer>
+    </body>
+</html>
