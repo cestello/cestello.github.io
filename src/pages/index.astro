@@ -1,43 +1,9 @@
 ---
-// src/pages/index.astro
-const title = "Home";
-const description = "Welcome to my Astro site";
-const year = new Date().getFullYear();
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-<!doctype html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width,initial-scale=1" />
-        <title>{title}</title>
-        <meta name="description" content={description} />
-        <link rel="stylesheet" href="/styles/global.css" />
-    </head>
-    <body>
-        <header>
-            <div class="container">
-                <h1>{title}</h1>
-                <nav>
-                    <a href="/">Home</a>
-                    <a href="/about/">About</a>
-                    <a href="/projects/">Projects</a>
-                </nav>
-            </div>
-        </header>
 
-        <main class="container">
-            <section>
-                <h2>Welcome</h2>
-                <p>cardea è mongoloide e non gli piace la fessa</p>
-                <p>giulia poca mi dispiace che cardea non ha la fessa, basta andare a concerti</p>
-                <p>pietro malerba gay di merda</p>
-            </section>
-        </main>
+<BaseLayout title="INDEX"> 
+<h1 class="flicker"> titolo </h1>
 
-        <footer>
-            <div class="container">
-                <p>&copy; {year} Your Name</p>
-            </div>
-        </footer>
-    </body>
-</html>
+<p> paragrafo </p>
+</BaseLayout>
