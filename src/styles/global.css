@@ -1,12 +1,12 @@
 :root {
-  --bg-color: #1a1812;       /* Sfondo carbone/ambra scuro */
-  --text-main: #ff9d00;      /* Ambra acceso */
-  --text-dim: #7c5e26;       /* Ambra spento per dettagli */
-  --accent: #ffb042;         /* Highlight */
-  
+  --bg-color: #1a1812;
+  --text-main: #ff9d00;
+  --text-dim: #7c5e26;
+  --accent: #ffb042;
+
   --border: 2px solid #ff9d00;
   --font-main: 'Share Tech Mono', monospace;
-  
+
   --glow: 0 0 10px rgba(255, 157, 0, 0.4), 0 0 2px rgba(255, 157, 0, 0.2);
 }
 
@@ -14,7 +14,11 @@ body {
   background-color: var(--bg-color);
   color: var(--text-main);
   font-family: var(--font-main);
-  /* L'effetto scanline lo gestiremo come overlay nel Layout */
+}
+
+.meta-data {
+  font-size: 0.9rem;
+  color: var(--text-dim);
 }
 
 /* glow */
@@ -22,12 +26,33 @@ body {
   text-shadow: var(--glow);
 }
 
+.flicker {
+  animation: flicker 0.15s infinite;
+}
+
 /* flicker */
 @keyframes flicker {
-  0% { opacity: 0.97;}
-  5% { opacity: 0.95;}
-  10% { opacity: 0.90;}
-  15% { opacity: 0.95;}
-  20% { opacity: 0.99;}
-  100% { opacity: 0.96;}
+  0% {
+    opacity: 0.97;
+  }
+
+  5% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.90;
+  }
+
+  15% {
+    opacity: 0.95;
+  }
+
+  20% {
+    opacity: 0.99;
+  }
+
+  100% {
+    opacity: 0.96;
+  }
 }
