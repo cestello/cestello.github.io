@@ -1,0 +1,60 @@
+---
+import Archives from '../sections/Archives.astro';
+import Projects from '../sections/Projects.astro';
+import Reports from '../sections/Reports.astro';
+---
+
+<div class="tempad-interface">
+  
+  <nav class="module-selector">
+    <button class="tva-btn active" data-target="archives">VARIANT ID</button>
+    <button class="tva-btn" data-target="projects">TIMELINE</button>
+    <button class="tva-btn" data-target="reports">REPORT</button>
+  </nav>
+
+  <div class="crt-screen-container">
+    
+    <div id="archives" class="screen-section active">
+      <Archives />
+    </div>
+
+    <div id="projects" class="screen-section hidden">
+      <Projects />
+    </div>
+
+    <div id="reports" class="screen-section hidden">
+      <Reports />
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.tva-btn');
+  const sections = document.querySelectorAll('.screen-section');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      
+      const targetId = btn.getAttribute('data-target');
+
+      if (!targetId) return; 
+
+      buttons.forEach(b => b.classList.remove('active'));
+      
+      btn.classList.add('active');
+
+      sections.forEach(s => {
+        s.classList.add('hidden');
+        s.classList.remove('active');
+      });
+
+      const targetSection = document.getElementById(targetId);
+      if (targetSection) {
+        targetSection.classList.remove('hidden');
+        targetSection.classList.add('active');
+      }
+    });
+  });
+</script>

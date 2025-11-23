@@ -1,12 +1,14 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import TopPanel from "../components/TopPanel.astro";
+import TopPanelLayout from "../layouts/TopPanelLayout.astro";
+import Display from '../components/core/Display.astro';
+
 ---
 
 <BaseLayout title="🌐 Portfolio v0.1">
-    <TopPanel 
+    <TopPanelLayout
     header_title="Portfolio v0.1" 
     leftMeta="USER: 0x63657374656C6C6F\nTIMELINE: SECURE" 
-    rightMeta="LOC: 44.498955N, 11.327591E\nSTATUS: CONNECTED">
-    </TopPanel>
+    rightMeta="LOC: 44.498955N, 11.327591E\nSTATUS: CONNECTED"/>
+    <Display />
 </BaseLayout>
