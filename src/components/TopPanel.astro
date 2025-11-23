@@ -1,0 +1,25 @@
+---
+interface Props {
+  header_title: string;
+  leftMeta: string;
+  rightMeta: string;
+}
+
+const { header_title, leftMeta, rightMeta } = Astro.props;
+---
+
+<header class="header-bar">
+  <div class="logo-row">
+    <div class="logo glow-text flicker-type1">{header_title}</div>
+  </div>
+
+  <div class="meta-row">
+    <div style="text-align: left">
+      <div class="meta-data glow-text flicker-type0 multiline">{leftMeta}</div>
+    </div>
+
+    <div style="text-align: left">
+      <div class="meta-data glow-text flicker-type0 multiline">{rightMeta}</div>
+    </div>
+  </div>
+</header>

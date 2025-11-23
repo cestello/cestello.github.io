@@ -1,5 +1,11 @@
 ---
+interface Props {
+  title?: string;
+  pageClass?: string;
+}
+
 const { title = "Portfolio", pageClass = '' } = Astro.props; 
+
 import '../styles/global.css'; 
 ---
 <!doctype html>
@@ -14,7 +20,7 @@ import '../styles/global.css';
 
         <title>{title}</title>
     </head>
-    <body>
+    <body class="theme-field-unit">
         <slot />
     </body>
 </html>

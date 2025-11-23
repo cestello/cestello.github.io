@@ -7,6 +7,9 @@
   --border: 2px solid #ff9d00;
   --font-main: 'Share Tech Mono', monospace;
 
+  --big-text: 3rem;
+  --small-text: 1.3rem;
+
   --glow: 0 0 10px rgba(255, 157, 0, 0.4), 0 0 2px rgba(255, 157, 0, 0.2);
 }
 
@@ -16,22 +19,43 @@ body {
   font-family: var(--font-main);
 }
 
+.header-bar {
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+}
+
+.logo-row {
+  font-size: var(--big-text);
+  margin-bottom: 0.5rem;
+}
+
+.meta-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 95%;
+}
+
+.logo {
+  font-size: var(--big-text);
+  letter-spacing: 2px;
+}
+
 .meta-data {
-  font-size: 0.9rem;
+  font-size: var(--small-text);
   color: var(--text-dim);
 }
 
-/* glow */
 .glow-text {
   text-shadow: var(--glow);
 }
 
-.flicker {
-  animation: flicker 0.15s infinite;
+.flicker-type0 {
+  animation: flicker-type0 0.15s infinite;
 }
 
-/* flicker */
-@keyframes flicker {
+@keyframes flicker-type0 {
   0% {
     opacity: 0.97;
   }
@@ -54,5 +78,67 @@ body {
 
   100% {
     opacity: 0.96;
+  }
+}
+
+.flicker-type1 {
+  animation: flicker-type1 12s infinite;
+}
+
+@keyframes flicker-type1 {
+
+  0%,
+  30% {
+    opacity: 0.98;
+  }
+
+  31% {
+    opacity: 0.5;
+  }
+
+  32% {
+    opacity: 0.98;
+  }
+
+  33% {
+    opacity: 0.1;
+  }
+
+  34% {
+    opacity: 0.98;
+  }
+
+  35%,
+  70% {
+    opacity: 0.99;
+  }
+
+  71% {
+    opacity: 0.3;
+  }
+
+  72% {
+    opacity: 0.98;
+  }
+
+  73% {
+    opacity: 0.1;
+  }
+
+  74% {
+    opacity: 0.98;
+  }
+
+  75% {
+    opacity: 0.4;
+  }
+
+  76% {
+    opacity: 0.95;
+  }
+
+  77%,
+  100% {
+    opacity: 0.98;
   }
 }
